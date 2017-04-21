@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.callerid.androidsampleapp.MainActivity"
+    tools:layout_editor_absoluteY="25dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <TextView
+        android:id="@+id/lbStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="29dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:labelFor="@+id/panLine1"
+        android:text="CallerID.com Sample App"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/panLine1"
+        android:layout_width="580dp"
+        android:layout_height="58dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/lbLine1"
+            android:layout_width="32dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="18dp"
+            android:text="01"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@+id/picLine1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lbTime1"
+            android:layout_width="120dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="18dp"
+            android:text="Time"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@+id/lbLine1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lbNumber1"
+            android:layout_width="170dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="18dp"
+            android:text="Number"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@+id/lbTime1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lbName1"
+            android:layout_width="170dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="18dp"
+            android:text="Name"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@+id/lbNumber1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/picLine1"
+            android:layout_width="53dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:srcCompat="@mipmap/phoneonhook"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1"
+            tools:layout_editor_absoluteY="6dp" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/panLine2"
+        android:layout_width="580dp"
+        android:layout_height="58dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="130dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/lbLine2"
+            android:layout_width="32dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="18dp"
+            android:text="01"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@+id/picLine2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lbTime2"
+            android:layout_width="120dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="18dp"
+            android:text="Time"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@+id/lbLine2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lbNumber2"
+            android:layout_width="170dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="18dp"
+            android:text="Number"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@+id/lbTime2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lbName2"
+            android:layout_width="170dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="18dp"
+            android:text="Name"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@+id/lbNumber2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/picLine2"
+            android:layout_width="53dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:srcCompat="@mipmap/phoneonhook"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1"
+            tools:layout_editor_absoluteY="6dp" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/panLine3"
+        android:layout_width="580dp"
+        android:layout_height="58dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="190dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/lbLine3"
+            android:layout_width="32dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="18dp"
+            android:text="01"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@+id/picLine3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lbTime3"
+            android:layout_width="120dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="18dp"
+            android:text="Time"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@+id/lbLine3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lbNumber3"
+            android:layout_width="170dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="18dp"
+            android:text="Number"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@+id/lbTime3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lbName3"
+            android:layout_width="170dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="18dp"
+            android:text="Name"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@+id/lbNumber3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/picLine3"
+            android:layout_width="53dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:srcCompat="@mipmap/phoneonhook"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1"
+            tools:layout_editor_absoluteY="6dp" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/panLine4"
+        android:layout_width="580dp"
+        android:layout_height="58dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="250dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/lbLine4"
+            android:layout_width="32dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="18dp"
+            android:text="01"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@+id/picLine4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lbTime4"
+            android:layout_width="120dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="18dp"
+            android:text="Time"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@+id/lbLine4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lbNumber4"
+            android:layout_width="170dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="18dp"
+            android:text="Number"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@+id/lbTime4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lbName4"
+            android:layout_width="170dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="18dp"
+            android:text="Name"
+            android:textAlignment="viewStart"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@+id/lbNumber4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/picLine4"
+            android:layout_width="53dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:srcCompat="@mipmap/phoneonhook"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1"
+            tools:layout_editor_absoluteY="6dp" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
