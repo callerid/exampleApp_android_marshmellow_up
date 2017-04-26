@@ -25,9 +25,12 @@
         <service
             android:name=".UDPListen"
             android:enabled="true"
-            android:exported="true" >
-        </service>
+            android:exported="true"></service>
 
+        <activity
+            android:name=".InfoActivity"
+            android:label="@string/title_activity_info"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

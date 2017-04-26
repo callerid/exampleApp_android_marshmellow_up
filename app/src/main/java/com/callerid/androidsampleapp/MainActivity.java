@@ -9,7 +9,10 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.constraint.ConstraintLayout;
@@ -18,6 +21,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.graphics.Color;
+import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -31,10 +36,29 @@ public class MainActivity extends Activity implements ServiceCallbacks {
     // Required Memory
     // -------------------------------------------------
 
+    // Database
+    static public SQLiteDatabase myDatabase;
+
     // UDP listen requirements
     private UDPListen mService;
     private boolean mBound = false;
     private String inString = "Waiting for Calls.";
+
+    // Setup field constants for accessing fields in database
+    private static String field_datetime = "DateTime";
+    private static String field_line = "Line";
+    private static String field_type = "Type";
+    private static String field_indicator = "Indicator";
+    private static String field_duration = "Duration";
+    private static String field_checksum = "Checksum";
+    private static String field_rings = "Rings";
+    private static String field_number = "Number";
+    private static String field_name = "Name";
+
+    // Database status
+    static final int DB_FOUND = 1;
+    static final int DB_NOTFOUND = 2;
+    static int[] dbStatus = new int[]{0,0,0,0,0};
 
     // Notifications
     static final int uniqueID = 1122334455;
@@ -51,6 +75,7 @@ public class MainActivity extends Activity implements ServiceCallbacks {
     static TextView callNumbers[] = new TextView[5];
     static TextView callNames[] = new TextView[5];
     static ConstraintLayout callPanels[] = new ConstraintLayout[5];
+    static ImageView databasePics[] = new ImageView[5];
 
     // Memory of program when minimized
     static int memPhoneStatus[] = new int[5];
@@ -69,11 +94,62 @@ public class MainActivity extends Activity implements ServiceCallbacks {
     static int imgRing;
     static int imgOffHook;
     static int imgOnHook;
+    static int imgDBIdle;
+    static int imgDBInsert;
+    static int imgDBFound;
 
     NotificationManager nm;
 
     // Required for memory capturing during app in background
     private boolean isInFront;
+
+    // -------------------------------------------------
+    // Database functions
+    // -------------------------------------------------
+    // ----------------------------------------------------------
+    //             Insert/Update new data for contact
+    // ----------------------------------------------------------
+
+    // ----------------------------------------------------------
+    //     Check CallerId for match and return info if found
+    // ----------------------------------------------------------
+
+    public static String[] checkCallerIdForMatch(String number){
+
+        Cursor results = myDatabase.rawQuery("SELECT * FROM contacts WHERE " + field_number + "='" + number + "';",null);
+
+
+        String name;
+        String address;
+        String city;
+        String state;
+        String zip;
+
+        if(results.getCount()<1) {
+
+            name = "not found";
+            address = "not found";
+            city = "not found";
+            state = "not found";
+            zip = "not found";
+
+        }
+        else{
+
+            results.moveToFirst();
+
+            name = results.getString(1);
+            address = results.getString(2);
+            city = results.getString(3);
+            state = results.getString(4);
+            zip = results.getString(5);
+
+        }
+
+        String[] rtnValues = new String[]{name,address,city,state,zip};
+        return rtnValues;
+
+    }
 
     // -------------------------------------------------
     // Update UI
@@ -96,7 +172,7 @@ public class MainActivity extends Activity implements ServiceCallbacks {
         //------------------------------------------------------
 
         String myDateTime="";
-        String myNumber="";
+        String myNumber="n/a";
         String myName="";
 
         // Check if matches a call record
@@ -141,6 +217,35 @@ public class MainActivity extends Activity implements ServiceCallbacks {
 
         }
 
+        // Database image updates
+        if(myNumber != "n/a"){
+
+            String[] dbResults = checkCallerIdForMatch(myNumber);
+
+            if(dbResults[0] != "not found"){
+
+                // -----------------------------------
+                //   Contact was found in database
+                // -----------------------------------
+
+                // Update to show contact info in database instead of callerid
+                myName = dbResults[0];
+                databasePics[myLine].setImageResource(imgDBFound);
+                dbStatus[myLine] = DB_FOUND;
+
+            }
+            else{
+
+                // -----------------------------------
+                //  Contact was not found in database
+                // -----------------------------------
+                databasePics[myLine].setImageResource(imgDBInsert);
+                dbStatus[myLine] = DB_NOTFOUND;
+
+            }
+
+        }
+
         // Combine type and indicator to allow for 'findCommandValue()' function
         command = myType + myIndicator;
 
@@ -177,7 +282,7 @@ public class MainActivity extends Activity implements ServiceCallbacks {
                     memCallNames[myLine] = myName;
 
                     // Send notification to lock screen
-                    //sendNotifications(true,myLine,myName,myNumber);
+                    sendNotifications(true,myLine,myName,myNumber);
 
                     break;
 
@@ -208,7 +313,7 @@ public class MainActivity extends Activity implements ServiceCallbacks {
                     memCallNames[myLine] = myName;
 
                     // Send notification to lock screen
-                    //sendNotifications(false,myLine,myName,myNumber);
+                    sendNotifications(false,myLine,myName,myNumber);
 
                     break;
 
@@ -287,7 +392,7 @@ public class MainActivity extends Activity implements ServiceCallbacks {
                     callNames[myLine].setText(myName);
 
                     // Send notification about new call
-                    //sendNotifications(true,myLine,myName,myNumber);
+                    sendNotifications(true,myLine,myName,myNumber);
 
                     break;
 
@@ -339,7 +444,7 @@ public class MainActivity extends Activity implements ServiceCallbacks {
                     callNumbers[myLine].setText(myNumber);
                     callNames[myLine].setText(myName);
 
-                    //sendNotifications(false,myLine,myName,myNumber);
+                    sendNotifications(false,myLine,myName,myNumber);
 
                     break;
                 case 6: // 'OS' for Outbound Start
@@ -430,6 +535,37 @@ public class MainActivity extends Activity implements ServiceCallbacks {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Set screen to stay on
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+        myDatabase = openOrCreateDatabase("sampleAppDatabase",MODE_PRIVATE,null);
+
+        // Create tables with needed formats
+        String creationQuery = "CREATE TABLE IF NOT EXISTS calls (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
+                        "DateTime TEXT," +
+                        "Line TEXT," +
+                        "Type TEXT," +
+                        "Indicator TEXT," +
+                        "Duration TEXT," +
+                        "Checksum TEXT," +
+                        "Rings TEXT," +
+                        "Number TEXT," +
+                        "Name TEXT" +
+                        ");";
+
+        myDatabase.execSQL(creationQuery);
+
+        creationQuery = "CREATE TABLE IF NOT EXISTS contacts (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
+                        "Name TEXT," +
+                        "Number TEXT," +
+                        "Address TEXT, " +
+                        "City TEXT, " +
+                        "State TEXT, " +
+                        "Zip TEXT" +
+                        ");";
+
+        myDatabase.execSQL(creationQuery);
+
         // Notifications
         nm = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
 
@@ -441,22 +577,27 @@ public class MainActivity extends Activity implements ServiceCallbacks {
         callPhonePics[3] = (ImageView)findViewById(R.id.picLine3);
         callPhonePics[4] = (ImageView)findViewById(R.id.picLine4);
 
+        databasePics[1] = (ImageView)findViewById(R.id.picDBLine1);
+        databasePics[2] = (ImageView)findViewById(R.id.picDBLine2);
+        databasePics[3] = (ImageView)findViewById(R.id.picDBLine3);
+        databasePics[4] = (ImageView)findViewById(R.id.picDBLine4);
+
         callTimes[1] = (TextView)findViewById(R.id.lbTime1);
-        callTimes[2] = (TextView)findViewById(R.id.lbTime1);
-        callTimes[3] = (TextView)findViewById(R.id.lbTime1);
-        callTimes[4] = (TextView)findViewById(R.id.lbTime1);
+        callTimes[2] = (TextView)findViewById(R.id.lbTime2);
+        callTimes[3] = (TextView)findViewById(R.id.lbTime3);
+        callTimes[4] = (TextView)findViewById(R.id.lbTime4);
 
         callNumbers[1] = (TextView)findViewById(R.id.lbNumber1);
-        callNumbers[2] = (TextView)findViewById(R.id.lbNumber1);
-        callNumbers[3] = (TextView)findViewById(R.id.lbNumber1);
-        callNumbers[4] = (TextView)findViewById(R.id.lbNumber1);
+        callNumbers[2] = (TextView)findViewById(R.id.lbNumber2);
+        callNumbers[3] = (TextView)findViewById(R.id.lbNumber3);
+        callNumbers[4] = (TextView)findViewById(R.id.lbNumber4);
 
         callNames[1] = (TextView)findViewById(R.id.lbName1);
         callNames[2] = (TextView)findViewById(R.id.lbName2);
         callNames[3] = (TextView)findViewById(R.id.lbName3);
         callNames[4] = (TextView)findViewById(R.id.lbName4);
 
-        callPanels[1] = (ConstraintLayout) findViewById(R.id.panLine1);
+        callPanels[1] = (ConstraintLayout)findViewById(R.id.panLine1);
         callPanels[2] = (ConstraintLayout)findViewById(R.id.panLine2);
         callPanels[3] = (ConstraintLayout)findViewById(R.id.panLine3);
         callPanels[4] = (ConstraintLayout)findViewById(R.id.panLine4);
@@ -466,8 +607,53 @@ public class MainActivity extends Activity implements ServiceCallbacks {
         imgOffHook = getResources().getIdentifier("phoneoffhook" , "mipmap", getPackageName());
         imgOnHook = getResources().getIdentifier("phoneonhook" , "mipmap", getPackageName());
 
+        imgDBIdle = getResources().getIdentifier("databaseidle" , "mipmap", getPackageName());
+        imgDBInsert = getResources().getIdentifier("databaseinsert" , "mipmap", getPackageName());
+        imgDBFound = getResources().getIdentifier("databasefound" , "mipmap", getPackageName());
+
         // Place previous call information back on screen
         showMemory();
+
+        // Listeners
+        ImageView imageView = (ImageView)findViewById(R.id.picDBLine1);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent act2 = new Intent(view.getContext(), InfoActivity.class);
+                act2.putExtra("number",memCallNumbers[1]);
+                startActivity(act2);
+            }
+        });
+
+        imageView = (ImageView)findViewById(R.id.picDBLine2);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent act2 = new Intent(view.getContext(), InfoActivity.class);
+                act2.putExtra("number",memCallNumbers[2]);
+                startActivity(act2);
+            }
+        });
+
+        imageView = (ImageView)findViewById(R.id.picDBLine3);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent act2 = new Intent(view.getContext(), InfoActivity.class);
+                act2.putExtra("number",memCallNumbers[3]);
+                startActivity(act2);
+            }
+        });
+
+        imageView = (ImageView)findViewById(R.id.picDBLine4);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent act2 = new Intent(view.getContext(), InfoActivity.class);
+                act2.putExtra("number",memCallNumbers[4]);
+                startActivity(act2);
+            }
+        });
 
     }
 
@@ -648,6 +834,28 @@ public class MainActivity extends Activity implements ServiceCallbacks {
             callTimes[i].setText(memCallTimes[i]);
             callNumbers[i].setText(memCallNumbers[i]);
             callNames[i].setText(memCallNames[i]);
+
+            switch(dbStatus[i]){
+
+                case DB_FOUND:
+
+                    databasePics[i].setImageResource(imgDBFound);
+
+                    break;
+
+                case DB_NOTFOUND:
+
+                    databasePics[i].setImageResource(imgDBInsert);
+
+                    break;
+
+                default:
+
+                    databasePics[i].setImageResource(imgDBIdle);
+
+                    break;
+
+            }
 
         }
 

@@ -40,7 +40,7 @@
             android:layout_marginTop="18dp"
             android:text="01"
             android:textAlignment="viewStart"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:layout_constraintLeft_toRightOf="@+id/picLine1"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,29 +51,29 @@
             android:layout_marginLeft="5dp"
             android:layout_marginTop="18dp"
             android:textAlignment="viewStart"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:layout_constraintLeft_toRightOf="@+id/lbLine1"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/lbNumber1"
-            android:layout_width="170dp"
+            android:layout_width="140dp"
             android:layout_height="28dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="18dp"
             android:textAlignment="viewStart"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:layout_constraintLeft_toRightOf="@+id/lbTime1"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/lbName1"
-            android:layout_width="170dp"
+            android:layout_width="140dp"
             android:layout_height="28dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="18dp"
             android:textAlignment="viewStart"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:layout_constraintLeft_toRightOf="@+id/lbNumber1"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -87,6 +87,22 @@
             tools:layout_constraintLeft_creator="1"
             tools:layout_constraintTop_creator="1"
             tools:layout_editor_absoluteY="6dp" />
+
+        <ImageView
+            android:id="@+id/picDBLine1"
+            android:layout_width="53dp"
+            android:layout_height="46dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/lbName1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/databaseidle"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1" />
 
     </android.support.constraint.ConstraintLayout>
 
@@ -109,7 +125,7 @@
             android:layout_marginTop="18dp"
             android:text="02"
             android:textAlignment="viewStart"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:layout_constraintLeft_toRightOf="@+id/picLine2"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -120,29 +136,29 @@
             android:layout_marginLeft="5dp"
             android:layout_marginTop="18dp"
             android:textAlignment="viewStart"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:layout_constraintLeft_toRightOf="@+id/lbLine2"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/lbNumber2"
-            android:layout_width="170dp"
+            android:layout_width="140dp"
             android:layout_height="28dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="18dp"
             android:textAlignment="viewStart"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:layout_constraintLeft_toRightOf="@+id/lbTime2"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/lbName2"
-            android:layout_width="170dp"
+            android:layout_width="140dp"
             android:layout_height="28dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="18dp"
             android:textAlignment="viewStart"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:layout_constraintLeft_toRightOf="@+id/lbNumber2"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -156,6 +172,22 @@
             tools:layout_constraintLeft_creator="1"
             tools:layout_constraintTop_creator="1"
             tools:layout_editor_absoluteY="6dp" />
+
+        <ImageView
+            android:id="@+id/picDBLine2"
+            android:layout_width="53dp"
+            android:layout_height="46dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/lbName2"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/databaseidle"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1" />
 
     </android.support.constraint.ConstraintLayout>
 
@@ -178,7 +210,7 @@
             android:layout_marginTop="18dp"
             android:text="03"
             android:textAlignment="viewStart"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:layout_constraintLeft_toRightOf="@+id/picLine3"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -189,29 +221,29 @@
             android:layout_marginLeft="5dp"
             android:layout_marginTop="18dp"
             android:textAlignment="viewStart"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:layout_constraintLeft_toRightOf="@+id/lbLine3"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/lbNumber3"
-            android:layout_width="170dp"
+            android:layout_width="140dp"
             android:layout_height="28dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="18dp"
             android:textAlignment="viewStart"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:layout_constraintLeft_toRightOf="@+id/lbTime3"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/lbName3"
-            android:layout_width="170dp"
+            android:layout_width="140dp"
             android:layout_height="28dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="18dp"
             android:textAlignment="viewStart"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:layout_constraintLeft_toRightOf="@+id/lbNumber3"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -225,6 +257,22 @@
             tools:layout_constraintLeft_creator="1"
             tools:layout_constraintTop_creator="1"
             tools:layout_editor_absoluteY="6dp" />
+
+        <ImageView
+            android:id="@+id/picDBLine3"
+            android:layout_width="53dp"
+            android:layout_height="46dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/lbName3"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/databaseidle"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1" />
 
     </android.support.constraint.ConstraintLayout>
 
@@ -247,7 +295,7 @@
             android:layout_marginTop="18dp"
             android:text="04"
             android:textAlignment="viewStart"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:layout_constraintLeft_toRightOf="@+id/picLine4"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -258,29 +306,29 @@
             android:layout_marginLeft="5dp"
             android:layout_marginTop="18dp"
             android:textAlignment="viewStart"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:layout_constraintLeft_toRightOf="@+id/lbLine4"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/lbNumber4"
-            android:layout_width="170dp"
+            android:layout_width="140dp"
             android:layout_height="28dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="18dp"
             android:textAlignment="viewStart"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:layout_constraintLeft_toRightOf="@+id/lbTime4"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/lbName4"
-            android:layout_width="170dp"
+            android:layout_width="140dp"
             android:layout_height="28dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="18dp"
             android:textAlignment="viewStart"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:layout_constraintLeft_toRightOf="@+id/lbNumber4"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -294,6 +342,22 @@
             tools:layout_constraintLeft_creator="1"
             tools:layout_constraintTop_creator="1"
             tools:layout_editor_absoluteY="6dp" />
+
+        <ImageView
+            android:id="@+id/picDBLine4"
+            android:layout_width="53dp"
+            android:layout_height="46dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/lbName4"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/databaseidle"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1" />
 
     </android.support.constraint.ConstraintLayout>
 

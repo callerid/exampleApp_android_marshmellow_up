@@ -12,10 +12,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ba053d11-75e7-4f71-bbdd-c211735b6b2e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/callerid/androidsampleapp/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/callerid/androidsampleapp/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
     </list>
     <ignored path="AndroidSampleApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,26 +50,50 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/callerid/androidsampleapp/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="625" column="88" selection-start-line="625" selection-start-column="88" selection-end-line="625" selection-end-column="88" />
+            <state relative-caret-position="-1326">
+              <caret line="55" column="19" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="19" />
               <folding>
+                <element signature="method#updateUI#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#findCommandValue#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#display#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
+                <element signature="e#21812#22108#0" expanded="true" />
+                <element signature="e#22107#22108#0" expanded="true" />
+                <element signature="e#22211#22507#0" expanded="true" />
+                <element signature="e#22506#22507#0" expanded="true" />
+                <element signature="e#22610#22906#0" expanded="true" />
+                <element signature="e#22905#22906#0" expanded="true" />
+                <element signature="e#23009#23305#0" expanded="true" />
+                <element signature="e#23304#23305#0" expanded="true" />
+                <element signature="method#sendNotifications#0;class#MainActivity#0" expanded="false" />
+                <element signature="class#26010:26487" expanded="false" />
+                <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#onDestroy#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#onStart#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#onRequestPermissionsResult#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#showMemory#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UDPListen.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/callerid/androidsampleapp/UDPListen.java">
+      <file leaf-file-name="InfoActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/callerid/androidsampleapp/InfoActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-              <folding />
+            <state relative-caret-position="289">
+              <caret line="57" column="40" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
+              <folding>
+                <element signature="e#2268#3294#0" expanded="true" />
+                <element signature="e#3293#3294#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
           <provider selected="true" editor-type-id="android-designer2">
             <state />
@@ -77,6 +101,19 @@
           <provider editor-type-id="text-editor">
             <state relative-caret-position="374">
               <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_info.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_info.xml">
+          <provider selected="true" editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="121" column="4" selection-start-line="121" selection-start-column="4" selection-end-line="121" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -1930,8 +1967,10 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/callerid/androidsampleapp/ServiceCallbacks.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/callerid/androidsampleapp/UDPListen.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/callerid/androidsampleapp/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_info.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/callerid/androidsampleapp/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/callerid/androidsampleapp/InfoActivity.java" />
       </list>
     </option>
   </component>
@@ -1966,7 +2005,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1983,6 +2021,28 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AndroidSampleApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2017,11 +2077,26 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AndroidSampleApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manifests" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2029,9 +2104,17 @@
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../SampleApp" />
-    <property name="device.picker.selection" value="Nexus_5_API_25" />
+    <property name="device.picker.selection" value="98a7cb91" />
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
+  </component>
+  <component name="RecentsManager">
+    <key name="android.template.packageName">
+      <recent name="com.callerid.androidsampleapp" />
+    </key>
+    <key name="android.template.parentActivityClass">
+      <recent name="" />
+    </key>
   </component>
   <component name="RunManager" selected="Android App.app">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -2364,10 +2447,11 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8123472" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2385,7 +2469,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294621" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -2401,16 +2484,81 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="4" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/callerid/androidsampleapp/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#updateUI#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#findCommandValue#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#display#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#21812#22108#0" expanded="true" />
+            <element signature="e#22107#22108#0" expanded="true" />
+            <element signature="e#22211#22507#0" expanded="true" />
+            <element signature="e#22506#22507#0" expanded="true" />
+            <element signature="e#22610#22906#0" expanded="true" />
+            <element signature="e#22905#22906#0" expanded="true" />
+            <element signature="e#23009#23305#0" expanded="true" />
+            <element signature="e#23304#23305#0" expanded="true" />
+            <element signature="method#sendNotifications#0;class#MainActivity#0" expanded="false" />
+            <element signature="class#26010:26487" expanded="false" />
+            <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onStart#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onRequestPermissionsResult#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#showMemory#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/callerid/androidsampleapp/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6562">
           <caret line="386" column="45" selection-start-line="386" selection-start-column="45" selection-end-line="386" selection-end-column="45" />
           <folding>
+            <element signature="method#updateUI#0;class#MainActivity#0" expanded="false" />
             <element signature="method#findCommandValue#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#display#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#21812#22108#0" expanded="true" />
+            <element signature="e#22107#22108#0" expanded="true" />
+            <element signature="e#22211#22507#0" expanded="true" />
+            <element signature="e#22506#22507#0" expanded="true" />
+            <element signature="e#22610#22906#0" expanded="true" />
+            <element signature="e#22905#22906#0" expanded="true" />
+            <element signature="e#23009#23305#0" expanded="true" />
+            <element signature="e#23304#23305#0" expanded="true" />
+            <element signature="method#sendNotifications#0;class#MainActivity#0" expanded="false" />
+            <element signature="class#26010:26487" expanded="false" />
+            <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onStart#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onRequestPermissionsResult#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#showMemory#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2431,7 +2579,28 @@
         <state relative-caret-position="6715">
           <caret line="395" column="0" selection-start-line="395" selection-start-column="0" selection-end-line="395" selection-end-column="0" />
           <folding>
+            <element signature="method#updateUI#0;class#MainActivity#0" expanded="false" />
             <element signature="method#findCommandValue#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#display#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#21812#22108#0" expanded="true" />
+            <element signature="e#22107#22108#0" expanded="true" />
+            <element signature="e#22211#22507#0" expanded="true" />
+            <element signature="e#22506#22507#0" expanded="true" />
+            <element signature="e#22610#22906#0" expanded="true" />
+            <element signature="e#22905#22906#0" expanded="true" />
+            <element signature="e#23009#23305#0" expanded="true" />
+            <element signature="e#23304#23305#0" expanded="true" />
+            <element signature="method#sendNotifications#0;class#MainActivity#0" expanded="false" />
+            <element signature="class#26010:26487" expanded="false" />
+            <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onStart#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onRequestPermissionsResult#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#showMemory#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2452,7 +2621,28 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="method#updateUI#0;class#MainActivity#0" expanded="false" />
             <element signature="method#findCommandValue#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#display#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#21812#22108#0" expanded="true" />
+            <element signature="e#22107#22108#0" expanded="true" />
+            <element signature="e#22211#22507#0" expanded="true" />
+            <element signature="e#22506#22507#0" expanded="true" />
+            <element signature="e#22610#22906#0" expanded="true" />
+            <element signature="e#22905#22906#0" expanded="true" />
+            <element signature="e#23009#23305#0" expanded="true" />
+            <element signature="e#23304#23305#0" expanded="true" />
+            <element signature="method#sendNotifications#0;class#MainActivity#0" expanded="false" />
+            <element signature="class#26010:26487" expanded="false" />
+            <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onStart#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onRequestPermissionsResult#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#showMemory#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2473,7 +2663,28 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="method#updateUI#0;class#MainActivity#0" expanded="false" />
             <element signature="method#findCommandValue#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#display#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#21812#22108#0" expanded="true" />
+            <element signature="e#22107#22108#0" expanded="true" />
+            <element signature="e#22211#22507#0" expanded="true" />
+            <element signature="e#22506#22507#0" expanded="true" />
+            <element signature="e#22610#22906#0" expanded="true" />
+            <element signature="e#22905#22906#0" expanded="true" />
+            <element signature="e#23009#23305#0" expanded="true" />
+            <element signature="e#23304#23305#0" expanded="true" />
+            <element signature="method#sendNotifications#0;class#MainActivity#0" expanded="false" />
+            <element signature="class#26010:26487" expanded="false" />
+            <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onStart#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onRequestPermissionsResult#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#showMemory#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2494,12 +2705,67 @@
         <state relative-caret-position="34">
           <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
+            <element signature="method#updateUI#0;class#MainActivity#0" expanded="false" />
             <element signature="method#findCommandValue#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#display#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#21812#22108#0" expanded="true" />
+            <element signature="e#22107#22108#0" expanded="true" />
+            <element signature="e#22211#22507#0" expanded="true" />
+            <element signature="e#22506#22507#0" expanded="true" />
+            <element signature="e#22610#22906#0" expanded="true" />
+            <element signature="e#22905#22906#0" expanded="true" />
+            <element signature="e#23009#23305#0" expanded="true" />
+            <element signature="e#23304#23305#0" expanded="true" />
+            <element signature="method#sendNotifications#0;class#MainActivity#0" expanded="false" />
+            <element signature="class#26010:26487" expanded="false" />
+            <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onStart#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onRequestPermissionsResult#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#showMemory#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/callerid/androidsampleapp/ServiceCallbacks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-25/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="112" column="19" selection-start-line="112" selection-start-column="19" selection-end-line="112" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/callerid/androidsampleapp/UDPListen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_info.xml">
       <provider selected="true" editor-type-id="android-designer2">
         <state />
       </provider>
@@ -2517,6 +2783,7 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2531,32 +2798,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/callerid/androidsampleapp/UDPListen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/callerid/androidsampleapp/ServiceCallbacks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/callerid/androidsampleapp/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="625" column="88" selection-start-line="625" selection-start-column="88" selection-end-line="625" selection-end-column="88" />
-          <folding>
-            <element signature="method#findCommandValue#0;class#MainActivity#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="android-designer2">
         <state />
@@ -2565,6 +2806,59 @@
         <state relative-caret-position="374">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_info.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="121" column="4" selection-start-line="121" selection-start-column="4" selection-end-line="121" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/callerid/androidsampleapp/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1326">
+          <caret line="55" column="19" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="19" />
+          <folding>
+            <element signature="method#updateUI#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#findCommandValue#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#display#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#21812#22108#0" expanded="true" />
+            <element signature="e#22107#22108#0" expanded="true" />
+            <element signature="e#22211#22507#0" expanded="true" />
+            <element signature="e#22506#22507#0" expanded="true" />
+            <element signature="e#22610#22906#0" expanded="true" />
+            <element signature="e#22905#22906#0" expanded="true" />
+            <element signature="e#23009#23305#0" expanded="true" />
+            <element signature="e#23304#23305#0" expanded="true" />
+            <element signature="method#sendNotifications#0;class#MainActivity#0" expanded="false" />
+            <element signature="class#26010:26487" expanded="false" />
+            <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onStart#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onRequestPermissionsResult#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#showMemory#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/callerid/androidsampleapp/InfoActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="57" column="40" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
+          <folding>
+            <element signature="e#2268#3294#0" expanded="true" />
+            <element signature="e#3293#3294#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
