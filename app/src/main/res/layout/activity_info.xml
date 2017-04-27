@@ -88,10 +88,10 @@
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="130dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="42dp"
         android:ems="10"
+        android:hint="[enter name]"
         android:inputType="textPersonName"
-        android:text="[enter name]"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -102,8 +102,8 @@
         android:layout_marginLeft="130dp"
         android:layout_marginTop="128dp"
         android:ems="10"
+        android:hint="[enter address]"
         android:inputType="textPersonName"
-        android:text="[enter address]"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -112,11 +112,11 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="130dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="[enter city]"
-        app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="[enter city]"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbAddress" />
 
     <EditText
@@ -124,11 +124,11 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="130dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="[enter state]"
-        app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="0dp"
+        android:ems="10"
+        android:hint="[enter state]"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbCity" />
 
     <EditText
@@ -136,11 +136,11 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="130dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="[enter zip]"
-        app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="0dp"
+        android:ems="10"
+        android:hint="[enter zip]"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbState" />
 
     <Button

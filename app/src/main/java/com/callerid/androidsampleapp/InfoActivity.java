@@ -86,7 +86,9 @@ public class InfoActivity extends AppCompatActivity {
                 for(int i=1;i<5;i++){
                     if(MainActivity.memCallNumbers[i]==Number){
 
+                        // update memory to reflect addition of contact
                         MainActivity.dbStatus[i] = MainActivity.DB_FOUND;
+                        MainActivity.memCallNames[i] = name;
                         break;
                     }
                 }
