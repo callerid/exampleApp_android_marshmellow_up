@@ -611,6 +611,15 @@ public class MainActivity extends Activity implements ServiceCallbacks {
         imgDBInsert = getResources().getIdentifier("databaseinsert" , "mipmap", getPackageName());
         imgDBFound = getResources().getIdentifier("databasefound" , "mipmap", getPackageName());
 
+        // Show idle phones if database statuses are NA
+        for(int i=1;i<5;i++){
+
+            if(dbStatus[i]==0){
+                memPhoneStatus[i] = imgOnHook;
+            }
+
+        }
+
         // Place previous call information back on screen
         showMemory();
 
