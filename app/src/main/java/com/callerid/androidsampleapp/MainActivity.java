@@ -15,6 +15,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -28,6 +29,12 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -44,7 +51,7 @@ public class MainActivity extends Activity implements ServiceCallbacks {
     private UDPListen mService;
     private boolean mBound = false;
     private String inString = "Waiting for Calls.";
-    private ArrayList<String> previousReceptions;
+    private Map<String, Integer> previousReceptions;
 
     // Setup field constants for accessing fields in database
     private static String field_datetime = "DateTime";
@@ -157,29 +164,37 @@ public class MainActivity extends Activity implements ServiceCallbacks {
     // Update UI
     // -------------------------------------------------
 
-    private void removeReceptionFromBuffer(String reception){
+    private void previousReceptions_timer_tick(){
 
-        ArrayList<Integer> indexes = new ArrayList<>();
-        int cnt = 0;
+        if(previousReceptions.size()<1)return;
 
-        for(String pReception : previousReceptions) {
+        ArrayList<String> keysToRemove = new ArrayList<>();
+        ArrayList<String> keysToIncrement = new ArrayList<>();
 
-            if(pReception.contains(reception.substring(reception.length()-20))){
-                indexes.add(cnt);
+        for(String key : previousReceptions.keySet()){
+
+            if(previousReceptions.get(key) > 4){
+                keysToRemove.add(key);
             }
-            cnt++;
+            else {
+                keysToIncrement.add(key);
+            }
         }
 
-        for(int i = indexes.size()-1; i >= 0; i--){
-            int remove = indexes.get(i);
-            previousReceptions.remove(remove);
+        for(String key : keysToIncrement){
+            previousReceptions.put(key,previousReceptions.get(key)+1);
         }
+
+        for(String key : keysToRemove){
+            previousReceptions.remove(key);
+        }
+
     }
 
     public void updateUI(String inData, boolean visible){
 
         // Code to ignore duplicates
-        if(previousReceptions.contains(inData)) {
+        if(previousReceptions.containsKey(inData)) {
             // If duplicate, ignore
             return;
         }
@@ -187,12 +202,12 @@ public class MainActivity extends Activity implements ServiceCallbacks {
             // If not duplicate add to check buffer
             if(previousReceptions.size()>30) {
                 // If check buffer is full, add one to the end and remove oldest
-                previousReceptions.add(inData);
+                previousReceptions.put(inData,0);
                 previousReceptions.remove(0);
             }
             else{
                 // If check buffer not full, simply add to end
-                previousReceptions.add(inData);
+                previousReceptions.put(inData,0);
             }
         }
 
@@ -238,11 +253,6 @@ public class MainActivity extends Activity implements ServiceCallbacks {
                 myName = matcher.group(10);
 
             }
-
-            if(myIndicator.equals("E")){
-                removeReceptionFromBuffer(inData);
-            }
-
         }
 
         // Check to see if call information is from a DETAILED record
@@ -706,6 +716,22 @@ public class MainActivity extends Activity implements ServiceCallbacks {
                 startActivity(act2);
             }
         });
+
+        // Startup previousReception timer handler
+        previousReceptions = new HashMap<String, Integer>();
+
+        Timer myTimer = new Timer();
+        myTimer.schedule(new TimerTask() {
+
+            @Override
+            public void run() {
+                MainActivity.this.runOnUiThread(new Runnable() {
+                    public void run() {
+                        previousReceptions_timer_tick();
+                    }
+                });
+            }
+        },0, 1000);
 
     }
 
